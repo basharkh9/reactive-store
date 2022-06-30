@@ -5,13 +5,21 @@ class ProductServices {
     return fetch("/products.json").then((resp) => resp.json());
   }
 
-  async loadProductsByName(search: string): Promise<Product[]> {
+  async searchProductsByName(search: string): Promise<Product[]> {
     const lcSearch = search.toLowerCase();
 
     return fetch("/products.json")
       .then((resp) => resp.json())
       .then((pokemon: Product[]) =>
         pokemon.filter(({ name }) => name.toLowerCase().includes(lcSearch))
+      );
+  }
+
+  async getProduct(productId: number): Promise<Product> {
+    return fetch("/products.json")
+      .then((resp) => resp.json())
+      .then(
+        (pokemon: Product[]) => pokemon.filter(({ id }) => id === productId)[0]
       );
   }
 }

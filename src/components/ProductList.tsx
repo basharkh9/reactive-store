@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ProductWithCoupon } from "../models/product";
 
 interface ProductListProps {
@@ -46,6 +47,12 @@ function ProductList({ items }: ProductListProps) {
                 </div>
               </div>
             </div>
+            <Link
+              className="btn btn-outline-warning"
+              to={`/products/${item.id.toString()}`}
+            >
+              Details
+            </Link>
           </div>
         ))}
       </div>
