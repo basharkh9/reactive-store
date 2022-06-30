@@ -1,5 +1,5 @@
-# Before you start please 
-Refer to data-flow.dio diagram file or the png file (dependency-graph.png).
+# Before you start 
+please refer to data-flow.dio diagram file or the png file (dependency-graph.png).
 
 It shows how Dependency graph created by just use dependency array in useMemo and callbacks
 
